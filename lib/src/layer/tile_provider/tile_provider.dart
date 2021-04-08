@@ -22,9 +22,9 @@ abstract class TileProvider {
     var z = _getZoomForUrl(coords, options);
 
     var data = <String, String>{
-      'x': coords.x.round().toString(),
-      'y': coords.y.round().toString(),
-      'z': z.round().toString(),
+      'x': coords.x.round().toString().padLeft(8, '0'),
+      'y': coords.y.round().toString().padLeft(8, '0'),
+      'z': z.round().toString().padLeft(2, '0'),
       's': getSubdomain(coords, options),
       'r': '@2x',
     };
